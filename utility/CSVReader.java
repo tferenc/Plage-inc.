@@ -1,4 +1,4 @@
-/**
+package utility; /**
  * Created by tamasferenc on 2017.02.28..
  */
 import java.io.BufferedReader;

@@ -1,3 +1,5 @@
+import utility.CSVReader;
+
 import java.util.Collection;
 import java.util.Vector;
 
@@ -7,7 +9,7 @@ public class Deck {
 	protected Collection<Vector> cards ;
 	private CSVReader reader;
 	
-	public addCards(DiseaseCard[] cards;)
+	public void addCards(DiseaseCard[] cards)
 	{
 		
 	}
