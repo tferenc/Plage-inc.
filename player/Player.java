@@ -61,10 +61,10 @@ public class Player implements Comparable<Player>{
 				return -1;
 		}	
 		case "victims":{
-			Integer currentPlayerStat = getHand().getTopCard().getVictims();
-			Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getVictims();
+			double currentPlayerStat = getHand().getTopCard().getVictims();
+			double otherPlayerStat = otherPlayer.getHand().getTopCard().getVictims();
 			
-			if(currentPlayerStat.equals(otherPlayerStat))
+			if(currentPlayerStat == otherPlayerStat)
 				return 0;
 			else if(currentPlayerStat > otherPlayerStat)
 				return 1;
@@ -72,10 +72,10 @@ public class Player implements Comparable<Player>{
 				return -1;
 		}
 		case "incubationTime":{
-			Integer currentPlayerStat = getHand().getTopCard().getIncubationTime();
-			Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getIncubationTime();
+			short currentPlayerStat = getHand().getTopCard().getIncubationTime();
+			short otherPlayerStat = otherPlayer.getHand().getTopCard().getIncubationTime();
 			
-			if(currentPlayerStat.equals(otherPlayerStat))
+			if(currentPlayerStat == otherPlayerStat)
 				return 0;
 			else if(currentPlayerStat > otherPlayerStat)
 				return 1;
