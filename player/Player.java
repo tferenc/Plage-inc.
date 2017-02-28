@@ -48,6 +48,40 @@ public class Player implements Comparable<Player>{
 
 	@Override
 	public int compareTo(Player otherPlayer) {
-		return 0;
+		switch(chooseStat()){
+		case "lethality":{
+			Integer currentPlayerStat = getHand().getTopCard().getLethality();
+			Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getLethality();
+			
+			if(currentPlayerStat.equals(otherPlayerStat))
+				return 0;
+			else if(currentPlayerStat > otherPlayerStat)
+				return 1;
+			else
+				return -1;
+		}	
+		case "victims":{
+			Integer currentPlayerStat = getHand().getTopCard().getVictims();
+			Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getVictims();
+			
+			if(currentPlayerStat.equals(otherPlayerStat))
+				return 0;
+			else if(currentPlayerStat > otherPlayerStat)
+				return 1;
+			else
+				return -1;
+		}
+		case "incubationTime":{
+			Integer currentPlayerStat = getHand().getTopCard().getIncubationTime();
+			Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getIncubationTime();
+			
+			if(currentPlayerStat.equals(otherPlayerStat))
+				return 0;
+			else if(currentPlayerStat > otherPlayerStat)
+				return 1;
+			else
+				return -1;
+		}	
+		}
 	}
 }
