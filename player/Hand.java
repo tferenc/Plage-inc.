@@ -1,4 +1,5 @@
 package player;
+import game.DiseaseCard;
 import model.Deck;
 
 public class Hand {
