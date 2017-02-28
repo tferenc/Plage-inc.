@@ -11,8 +11,8 @@ public class Deck {
 	protected Collection<DiseaseCard> cards = new Vector<DiseaseCard>();
 	private CSVReader reader;
 
-	public Collection addCards() {
-		return reader.readlnCards();
+	public void addCards() {
+		cards = reader.readlnCards();
 	}
 
 	public int getSize() {
