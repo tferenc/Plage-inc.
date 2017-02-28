@@ -12,7 +12,8 @@ public class Deck {
 	private CSVReader reader;
 
 	public void addCards() {
-		cards = reader.readlnCards();
+		reader = new CSVReader();
+		cards = reader.getDeck();
 	}
 
 	public int getSize() {
