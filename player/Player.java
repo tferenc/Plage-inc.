@@ -2,6 +2,8 @@ package player;
 
 import java.util.Scanner;
 
+import game.DiseaseCard;
+
 public class Player {
 	
 	private Hand hand;
@@ -17,14 +19,19 @@ public class Player {
 	}
 	
 	public void giveCard(DiseaseCard card, Player target){
-		
+		target.addCard(card);
+		hand.removeCard(card);
 	}
 	
 	public String chooseStat(){
 		Scanner sc = new Scanner(System.in);
+		String choosedStat = sc.nextLine();
+		sc.close();
+		
+		return choosedStat;
 	}
 	
 	public String toString(){
-		return null;
+		return "Name: " + name + "\n, Current card: " + hand.toString();
 	}
 }
