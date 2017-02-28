@@ -15,7 +15,10 @@ public class GameTable extends Table
     {
         while(baseDeck.getSize() != 0)
         {
-            player[0].getHand().addCard(baseDeck.getCards().get(1));
+            player[0].getHand().addCard(baseDeck.getCards().get(0));
+            baseDeck.removeCard(0);
+            player[1].getHand().addCard(baseDeck.getCards().get(0));
+            baseDeck.removeCard(0);
         }
     }
 
