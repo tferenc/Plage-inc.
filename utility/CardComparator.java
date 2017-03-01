@@ -5,10 +5,13 @@ import model.Table;
 
 public class CardComparator {
 	public Player compare(Player player1, Player player2){
-		Player winner;
 		
-		
-		//return player2.getHand().getTopCard();
+		switch(player1.compareTo(player2)){
+			case 1:
+				return player1;
+			case -1:
+				return player2;
+		}
 		return null;
 	}
 }
