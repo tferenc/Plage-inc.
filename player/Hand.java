@@ -1,10 +1,9 @@
 package player;
 
 import game.DiseaseCard;
-import model.Card;
 import model.Deck;
 
-public class Hand {
+public class Hand extends Deck {
 	private Deck hand;
 	private boolean isEmpty;
 
@@ -28,13 +27,8 @@ public class Hand {
 		return hand.getCards().get(0);
 	}
 	
-	public void removeCard(Card card)
+	public void removeCard(DiseaseCard card)
 	{	
-		for (int j = 0; j < hand.getSize(); j++) {
-			if (hand.getCards().toArray()[j] == card) {
-				hand.removeCard(j);
-			}		
-		}
-		
+		hand.getCards().remove(card);
 	}
 }
