@@ -8,11 +8,15 @@ import utility.CSVReader;
 public class Deck {
 
 	protected int size;
-	protected Collection<DiseaseCard> cards = new Vector<DiseaseCard>();
+	protected Collection<DiseaseCard> cards;
 	private CSVReader reader;
+	
+	public Deck(){
+		 cards = new Vector<DiseaseCard>();
+		 reader = new CSVReader();
+	}
 
 	public void addCards() {
-		reader = new CSVReader();
 		cards = reader.getDeck();
 	}
 
