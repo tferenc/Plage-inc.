@@ -20,10 +20,14 @@ public class Player implements Comparable<Player>{
 	}
 	
 	public void giveCard(DiseaseCard card, Player target){
-		target.addCard(card);
+		target.getHand().addCard(card);
 		hand.removeCard(card);
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String chooseStat(){
 		Logger logger = new Logger();
 		String choosedStat = null;
@@ -58,39 +62,39 @@ public class Player implements Comparable<Player>{
 	@Override
 	public int compareTo(Player otherPlayer) {
 		switch(chooseStat()){
-		case "lethality":{
-			Integer currentPlayerStat = getHand().getTopCard().getLethality();
-			Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getLethality();
-			
-			if(currentPlayerStat.equals(otherPlayerStat))
-				return 0;
-			else if(currentPlayerStat > otherPlayerStat)
-				return 1;
-			else
-				return -1;
-		}	
-		case "victims":{
-			double currentPlayerStat = getHand().getTopCard().getVictims();
-			double otherPlayerStat = otherPlayer.getHand().getTopCard().getVictims();
-			
-			if(currentPlayerStat == otherPlayerStat)
-				return 0;
-			else if(currentPlayerStat > otherPlayerStat)
-				return 1;
-			else
-				return -1;
-		}
-		case "incubationTime":{
-			short currentPlayerStat = getHand().getTopCard().getIncubationTime();
-			short otherPlayerStat = otherPlayer.getHand().getTopCard().getIncubationTime();
-			
-			if(currentPlayerStat == otherPlayerStat)
-				return 0;
-			else if(currentPlayerStat > otherPlayerStat)
-				return 1;
-			else
-				return -1;
-		}	
+			case "lethality":{
+				Integer currentPlayerStat = getHand().getTopCard().getLethality();
+				Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getLethality();
+				
+				if(currentPlayerStat.equals(otherPlayerStat))
+					return 0;
+				else if(currentPlayerStat > otherPlayerStat)
+					return 1;
+				else
+					return -1;
+			}	
+			case "victims":{
+				double currentPlayerStat = getHand().getTopCard().getVictims();
+				double otherPlayerStat = otherPlayer.getHand().getTopCard().getVictims();
+				
+				if(currentPlayerStat == otherPlayerStat)
+					return 0;
+				else if(currentPlayerStat > otherPlayerStat)
+					return 1;
+				else
+					return -1;
+			}
+			case "incubationTime":{
+				short currentPlayerStat = getHand().getTopCard().getIncubationTime();
+				short otherPlayerStat = otherPlayer.getHand().getTopCard().getIncubationTime();
+				
+				if(currentPlayerStat == otherPlayerStat)
+					return 0;
+				else if(currentPlayerStat > otherPlayerStat)
+					return 1;
+				else
+					return -1;
+			}	
 		}
 		return 0;
 	}
