@@ -8,7 +8,11 @@ import utility.Logger;
 
 public class DiseaseCardGame {
 
-	private GameTable gameTable = new GameTable();
+	private GameTable gameTable;
+	
+	public DiseaseCardGame(){
+		 gameTable = new GameTable();
+	}
 
 	public void initializePlayers(Logger logger) {
 		logger.print("Initializing players...");
