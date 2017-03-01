@@ -27,10 +27,16 @@ public class Player implements Comparable<Player>{
 	public String chooseStat(){
 		Logger logger = new Logger();
 		String choosedStat = null;
+		int choosedStatID = -1;
 		
 		Scanner sc = new Scanner(System.in);
 		logger.print("Choose your stat! \n Lethality(1) Victims(2) IncubationTime(3)");
-		int choosedStatID = sc.nextInt();
+		try{
+			choosedStatID = sc.nextInt();
+		}catch(NumberFormatException e){
+			logger.print("Wrong input!");
+			logger.print("Enter the number of your stat!");
+		}
 		sc.close();
 		
 		switch(choosedStatID){
