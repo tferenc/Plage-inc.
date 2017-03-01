@@ -52,7 +52,7 @@ public class Player implements Comparable<Player>{
 	}
 	
 	public String toString(){
-		return "Name: " + name + "\n, Current card: " + hand.toString();
+		return "Name: " + name + "\n, Current card: " + hand.getTopCard().toString();
 	}
 
 	@Override
