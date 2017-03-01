@@ -35,7 +35,7 @@ public class DiseaseCard extends Card {
 	public String toString() {
 		return name +" - [Halálozási arány: " + lethality + "%" +
 				" Áldozatok: " + victims + "/100k" + 
-				" Lappangás: " + incubationTime + "nap";
+				" Lappangás: " + incubationTime + "nap" + "]";
 	}
 	
 	
