@@ -15,17 +15,17 @@ public class GameTable extends Table
     }
 
     @Override
-    public void distributeCards(Player[] player, Hand hand)
+    public void distributeCards()
     {
         Random rand = new Random();
         while(baseDeck.getSize() != 0)
         {
             int n = rand.nextInt(baseDeck.getSize());
-            player[0].getHand().addCard(baseDeck.getCards().get(n));
+            players[0].getHand().addCard(baseDeck.getCards().get(n));
             baseDeck.removeCard(n);
 
             n = rand.nextInt(baseDeck.getSize());
-            player[1].getHand().addCard(baseDeck.getCards().get(n));
+            players[1].getHand().addCard(baseDeck.getCards().get(n));
             baseDeck.removeCard(n);
         }
     }

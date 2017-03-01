@@ -13,7 +13,7 @@ public abstract class Table
     protected Player currentPlayer;
     protected int rounds;
 
-    public abstract void distributeCards(Player[] player, Hand hand);
+    public abstract void distributeCards();
     public abstract Player getCurrentPlayer();
     public abstract int getRounds();
     public abstract String toString();
