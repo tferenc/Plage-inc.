@@ -33,8 +33,9 @@ public class DiseaseCard extends Card {
 
 	@Override
 	public String toString() {
-		return "DiseaseCard [lethality=" + lethality + ", victims=" + victims + ", incubationTime=" + incubationTime
-				+ ", name=" + name + "]";
+		return name +" - [Halálozási arány: " + lethality + "%" +
+				" Áldozatok: " + victims + "/100k" + 
+				" Lappangás: " + incubationTime + "nap" + "]";
 	}
 	
 	
