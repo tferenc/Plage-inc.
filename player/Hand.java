@@ -1,6 +1,7 @@
 package player;
 
 import game.DiseaseCard;
+import model.Card;
 import model.Deck;
 
 public class Hand {
@@ -25,5 +26,15 @@ public class Hand {
 
 	public DiseaseCard getTopCard() {
 		return hand.getCards().get(0);
+	}
+	
+	public void removeCard(Card card)
+	{	
+		for (int j = 0; j < hand.getSize(); j++) {
+			if (hand.getCards().toArray()[j] == card) {
+				hand.removeCard(j);
+			}		
+		}
+		
 	}
 }
