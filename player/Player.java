@@ -3,6 +3,7 @@ package player;
 import java.util.Scanner;
 
 import game.DiseaseCard;
+import utility.Logger;
 
 public class Player implements Comparable<Player>{
 	
@@ -24,9 +25,11 @@ public class Player implements Comparable<Player>{
 	}
 	
 	public String chooseStat(){
+		Logger logger = new Logger();
 		String choosedStat = null;
 		
 		Scanner sc = new Scanner(System.in);
+		logger.print("Choose your stat! \n Lethality(1) Victims(2) IncubationTime(3)");
 		int choosedStatID = sc.nextInt();
 		sc.close();
 		
@@ -83,5 +86,6 @@ public class Player implements Comparable<Player>{
 				return -1;
 		}	
 		}
+		return 0;
 	}
 }
