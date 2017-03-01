@@ -4,6 +4,8 @@
 package game;
 
 import java.util.Random;
+
+import model.Deck;
 import model.Table;
 import player.Hand;
 import player.Player;
@@ -18,6 +20,7 @@ public class GameTable extends Table
     @Override
     public void distributeCards()
     {
+        baseDeck = new Deck();
         Random rand = new Random();
         while(baseDeck.getSize() != 0)
         {
