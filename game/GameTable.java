@@ -1,7 +1,6 @@
 /**
  * Created by tamasferenc on 2017.02.28..
  */
-
 package game;
 
 import java.util.Random;
@@ -10,6 +9,10 @@ import player.Hand;
 import player.Player;
 public class GameTable extends Table
 {
+    public GameTable() {
+        players[0] = new Player(new Hand(), "player1");
+        players[1] = new Player(new Hand(), "player2");
+    }
 
     @Override
     public void distributeCards(Player[] player, Hand hand)
@@ -42,6 +45,6 @@ public class GameTable extends Table
     @Override
     public String toString()
     {
-        return null;
+        return ("Round: " + getRounds() + "\nCurrent player: " + getCurrentPlayer().toString());
     }
 }
