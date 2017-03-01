@@ -15,12 +15,12 @@ public class DiseaseCardGame {
 	}
 
 	public void initializePlayers(Logger logger) {
-		logger.print("Initializing players...");
+		logger.print("Játékosok létrehozása...");
 		gameTable.distributeCards();
 	}
 
 	public void setPlayerName(Player p, int playerNum, Logger logger, Scanner sc) {
-		logger.print("Please enter a name for the " + (playerNum + 1) + ". player: ");
+		logger.print("Add meg a(z) " + (playerNum + 1) + ". játékos nevét: ");
 		p.setName(sc.nextLine());
 	}
 
@@ -30,9 +30,9 @@ public class DiseaseCardGame {
 		Player currentPlayer = gameTable.getCurrentPlayer();
 
 		if (currentPlayer.equals(players[0])) {
-			logger.print("The dealer will be " + gameTable.getPlayers()[1].getName() + ".");
+			logger.print("Az osztó " + gameTable.getPlayers()[1].getName() + " lett.");
 		} else {
-			logger.print("The dealer will be " + gameTable.getPlayers()[0].getName() + ".");
+			logger.print("Az osztó " + gameTable.getPlayers()[0].getName() + " lett.");
 		}
 	}
 	
@@ -46,7 +46,7 @@ public class DiseaseCardGame {
 		int index = r.nextInt(2);
 
 		gameTable.setCurrentPlayer(index);
-		logger.print(gameTable.getCurrentPlayer().getName() + " will start.");
+		logger.print(gameTable.getCurrentPlayer().getName() + " kezdi az első kört.");
 	}
 
 }
