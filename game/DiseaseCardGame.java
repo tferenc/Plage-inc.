@@ -9,17 +9,15 @@ import utility.Logger;
 public class DiseaseCardGame {
 
 	private GameTable gameTable = new GameTable();
-	private Scanner sc = new Scanner(System.in);
 
 	public void initializePlayers(Logger logger) {
 		logger.print("Initializing players...");
 		gameTable.distributeCards();
 	}
 
-	public void setPlayerName(Player p, int playerNum, Logger logger) {
+	public void setPlayerName(Player p, int playerNum, Logger logger, Scanner sc) {
 		logger.print("Please enter a name for the " + playerNum + ". player: \n");
 		p.setName(sc.nextLine());
-		sc.close();
 	}
 
 	public void printDealer(Logger logger) {
