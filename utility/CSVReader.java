@@ -15,7 +15,7 @@ public class CSVReader {
 	private static final int LETHALITY = 1;
 	private static final int VICTIMS = 2;
 	private static final int INCUBATION = 3;
-	private String filepath = "src/diseases.csv";
+	private String filepath = "Plage-inc./diseases.csv";
     private Vector<DiseaseCard> deck = new Vector<DiseaseCard>();
     
     public CSVReader(){

@@ -15,12 +15,14 @@ public class GameTable extends Table
         players = new Player[2];
         players[0] = new Player(new Hand(), "player1");
         players[1] = new Player(new Hand(), "player2");
+        rounds = 0;
     }
 
     @Override
     public void distributeCards()
     {
         baseDeck = new Deck();
+        baseDeck.addCards();
         Random rand = new Random();
         while(baseDeck.getSize() != 0)
         {
@@ -59,6 +61,6 @@ public class GameTable extends Table
     @Override
     public String toString()
     {
-        return ("Round: " + getRounds() + "\nCurrent player: " + getCurrentPlayer().toString());
+        return ("Round: " + getRounds() + "\nCurrent player: " + getCurrentPlayer());
     }
 }
