@@ -19,6 +19,10 @@ public class DiseaseCard extends Card {
 		this.incubationTime = incubationTime;
 	}
 	
+	public String getName(){
+		return name;
+	}
+	
 	public int getLethality() {
 		return lethality;
 	}
