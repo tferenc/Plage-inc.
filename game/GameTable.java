@@ -31,7 +31,11 @@ public class GameTable extends Table
             baseDeck.removeCard(n);
         }
     }
-
+    
+    public Player[] getPlayers(){
+    	return players;
+    }
+    
     @Override
     public Player getCurrentPlayer()
     {
