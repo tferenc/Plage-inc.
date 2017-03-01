@@ -12,7 +12,6 @@ public abstract class Table
     protected Deck baseDeck;
     protected Player currentPlayer;
     protected int rounds;
-    protected CardComperator comperator;
 
     public abstract void distributeCards(Player[] player, Hand hand);
     public abstract Player getCurrentPlayer();
