@@ -5,7 +5,6 @@ import model.Deck;
 
 public class Hand extends Deck {
 	private Deck hand;
-	private boolean isEmpty;
 
 	public boolean isEmpty() {
 		if (hand.getCards().size() > 0) {
