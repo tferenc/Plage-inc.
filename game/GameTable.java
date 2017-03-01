@@ -3,6 +3,7 @@
  */
 package game;
 
+import java.awt.peer.SystemTrayPeer;
 import java.util.Random;
 import model.Table;
 import player.Hand;
@@ -20,6 +21,7 @@ public class GameTable extends Table
         Random rand = new Random();
         while(baseDeck.getSize() != 0)
         {
+            rand.setSeed(System.currentTimeMillis());
             int n = rand.nextInt(baseDeck.getSize());
             players[0].getHand().addCard(baseDeck.getCards().get(n));
             baseDeck.removeCard(n);
@@ -36,9 +38,9 @@ public class GameTable extends Table
         return  currentPlayer;
     }
 
-    public void setCurrentPlayer(Player player)
+    public void setCurrentPlayer(int index)
     {
-        currentPlayer = player;
+        currentPlayer = players[index];
     }
 
     @Override
