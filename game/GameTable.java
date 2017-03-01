@@ -36,6 +36,11 @@ public class GameTable extends Table
         return  currentPlayer;
     }
 
+    public void setCurrentPlayer(Player player)
+    {
+        currentPlayer = player;
+    }
+
     @Override
     public int getRounds()
     {
