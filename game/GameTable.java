@@ -3,7 +3,6 @@
  */
 package game;
 
-import java.awt.peer.SystemTrayPeer;
 import java.util.Random;
 import model.Table;
 import player.Hand;
@@ -11,6 +10,7 @@ import player.Player;
 public class GameTable extends Table
 {
     public GameTable() {
+        players = new Player[2];
         players[0] = new Player(new Hand(), "player1");
         players[1] = new Player(new Hand(), "player2");
     }
