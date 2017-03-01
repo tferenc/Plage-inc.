@@ -1,24 +1,29 @@
-package game;
-
-import model.Table;
-import player.Hand;
-import player.Player;
-
 /**
  * Created by tamasferenc on 2017.02.28..
  */
+
+package game;
+
+import java.util.Random;
+import model.Table;
+import player.Hand;
+import player.Player;
 public class GameTable extends Table
 {
 
     @Override
     public void distributeCards(Player[] player, Hand hand)
     {
+        Random rand = new Random();
         while(baseDeck.getSize() != 0)
         {
-            player[0].getHand().addCard(baseDeck.getCards().get(0));
-            baseDeck.removeCard(0);
-            player[1].getHand().addCard(baseDeck.getCards().get(0));
-            baseDeck.removeCard(0);
+            int n = rand.nextInt(baseDeck.getSize());
+            player[0].getHand().addCard(baseDeck.getCards().get(n));
+            baseDeck.removeCard(n);
+
+            n = rand.nextInt(baseDeck.getSize());
+            player[1].getHand().addCard(baseDeck.getCards().get(n));
+            baseDeck.removeCard(n);
         }
     }
 
