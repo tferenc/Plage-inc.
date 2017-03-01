@@ -16,7 +16,7 @@ public class DiseaseCardGame {
 	}
 
 	public void setPlayerName(Player p, int playerNum, Logger logger, Scanner sc) {
-		logger.print("Please enter a name for the " + (playerNum + 1) + ". player: \n");
+		logger.print("Please enter a name for the " + (playerNum + 1) + ". player: ");
 		p.setName(sc.nextLine());
 	}
 
