@@ -27,6 +27,10 @@ public class Deck {
 		cards.remove(cards.toArray()[index]);
 	}
 	
+	public void removeCard(DiseaseCard card){
+		cards.remove(card);
+	}
+	
 	public Vector<DiseaseCard> getCards(){
 		return (Vector<DiseaseCard>)cards;
 	}
