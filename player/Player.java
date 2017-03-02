@@ -124,4 +124,43 @@ public class Player implements Comparable<Player>{
 		}
 		return "apadfasza";
 	}
+	
+	public int compareTo(Player otherPlayer, String stat) {
+		switch(stat){
+			case "lethality":{
+				Integer currentPlayerStat = getHand().getTopCard().getLethality();
+				Integer otherPlayerStat = otherPlayer.getHand().getTopCard().getLethality();
+				
+				if(currentPlayerStat.equals(otherPlayerStat))
+					return 0;
+				else if(currentPlayerStat > otherPlayerStat)
+					return 1;
+				else
+					return -1;
+			}	
+			case "victims":{
+				double currentPlayerStat = getHand().getTopCard().getVictims();
+				double otherPlayerStat = otherPlayer.getHand().getTopCard().getVictims();
+				
+				if(currentPlayerStat == otherPlayerStat)
+					return 0;
+				else if(currentPlayerStat > otherPlayerStat)
+					return 1;
+				else
+					return -1;
+			}
+			case "incubationTime":{
+				short currentPlayerStat = getHand().getTopCard().getIncubationTime();
+				short otherPlayerStat = otherPlayer.getHand().getTopCard().getIncubationTime();
+				
+				if(currentPlayerStat == otherPlayerStat)
+					return 0;
+				else if(currentPlayerStat > otherPlayerStat)
+					return 1;
+				else
+					return -1;
+			}	
+		}
+		return 0;
+	}
 }
