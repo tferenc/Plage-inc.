@@ -45,7 +45,7 @@ public class Player implements Comparable<Player>{
 			logger.print("Ilyen lehetőség nincs!");
 			logger.print("Add meg a tulajdonság számát.");
 		}
-		sc.close();
+		//sc.close();
 		
 		switch(choosedStatID){
 		case 1:

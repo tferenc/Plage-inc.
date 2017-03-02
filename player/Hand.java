@@ -1,7 +1,5 @@
 package player;
 
-import java.util.Vector;
-
 import game.DiseaseCard;
 import model.Deck;
 

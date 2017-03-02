@@ -21,12 +21,11 @@ public class Main {
 		game.setStartingPlayer(logger);
 		game.printDealer(logger);
 
-		// while(players[0].getHand().getSize() > 0 ||
-		// players[1].getHand().getSize() > 0){
-		//
-		// }
-
-		playGame(game, logger, table, cComp);
+		while (players[0].getHand().getSize() != 0 || players[1].getHand().getSize() != 0) {
+			playGame(game, logger, table, cComp);
+		}
+		
+		logger.print("VÉGE");
 
 	}
 
@@ -50,7 +49,7 @@ public class Main {
 		logger.print(otherPlayer.getName() + ":");
 		logger.print(otherPlayer.getHand().getTopCard().toString());
 		logger.print("A kör nyertesese: " + winner.getName());
-		
+
 		System.out.println(currentPlayer.getName() + ": " + currentPlayer.getHand().getSize());
 		System.out.println(otherPlayer.getName() + ": " + otherPlayer.getHand().getSize());
 
