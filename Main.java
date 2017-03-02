@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import game.DiseaseCard;
 import game.DiseaseCardGame;
 import game.GameTable;
 import player.Player;
