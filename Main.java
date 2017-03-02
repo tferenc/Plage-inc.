@@ -15,30 +15,23 @@ public class Main {
 		GameTable table = game.getTable();
 		CardComparator cComp = new CardComparator();
 
-        logger.clearScreen();
+		logger.clearScreen();
 		game.initializePlayers(logger);
 		setUpplayerNames(game, logger);
 		game.setStartingPlayer(logger);
 		game.printDealer(logger);
 
-		while (players[0].getHand().getSize() != 0 || players[1].getHand().getSize() != 0)
-        {
-            if(players[0].getHand().getSize() == 0)
-            {
-                logger.print("\n" + players[0].getName() + " vesztett! ");
-                break;
-            }
-            else if(players[1].getHand().getSize() == 0)
-            {
-                logger.print("\n" + players[1].getName() + " vesztett!");
-                break;
-            }
-            else
-            {
-                playGame(game, logger, table, cComp);
-            }
-        }
-
+		while (players[0].getHand().getSize() != 0 || players[1].getHand().getSize() != 0) {
+			if (players[0].getHand().getSize() == 0) {
+				logger.print("\n" + players[0].getName() + " vesztett! ");
+				break;
+			} else if (players[1].getHand().getSize() == 0) {
+				logger.print("\n" + players[1].getName() + " vesztett!");
+				break;
+			} else {
+				playGame(game, logger, table, cComp);
+			}
+		}
 
 	}
 
@@ -56,7 +49,8 @@ public class Main {
 		Player currentPlayer = table.getCurrentPlayer();
 		Player otherPlayer = table.getOtherPlayer();
 
-		logger.print("\nJelenlegi játékos: " + currentPlayer.getName());
+		logger.print("\nJelenlegi játékos: " + currentPlayer.getName() +
+				" (" + currentPlayer.getHand().getSize() + ")");
 		logger.print(currentPlayer.getHand().getTopCard().toString());
 		winner = cc.compare(currentPlayer, otherPlayer);
 
@@ -64,10 +58,9 @@ public class Main {
 		logger.print(otherPlayer.getHand().getTopCard().toString());
 		logger.print("A kör nyertesese: " + winner.getName(), true);
 
-        logger.print("A választott szempont: " + currentPlayer.getChoosedStat());
+		logger.print("A választott szempont: " + currentPlayer.getChoosedStat());
 		logger.print(currentPlayer.getName() + " kártyája : " + currentPlayer.getHand().getTopCard().toString());
 		logger.print(otherPlayer.getName() + " kártyája: " + otherPlayer.getHand().getTopCard().toString());
-
 
 		if (winner.equals(currentPlayer)) {
 			currentPlayer.getHand().putFirstCardToBack();
