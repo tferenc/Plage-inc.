@@ -47,6 +47,19 @@ public class GameTable extends Table
         return  currentPlayer;
     }
 
+    public Player getOtherPlayer()
+    {
+        if(getCurrentPlayer().equals(players[0]))
+        {
+            return players[1];
+        }
+        else
+        {
+            return players[0];
+        }
+
+    }
+
     public void setCurrentPlayer(int index)
     {
         currentPlayer = players[index];
