@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+import game.DiseaseCard;
 import game.DiseaseCardGame;
 import game.GameTable;
 import player.Player;
@@ -40,27 +41,33 @@ public class Main {
 
 	public static void playGame(DiseaseCardGame game, Logger logger, GameTable table, CardComparator cc) {
 		Player winner = null;
-		logger.print("Jelenlegi játékos: " + table.getCurrentPlayer().getName());
-		logger.print(table.getCurrentPlayer().getHand().getTopCard().toString());
-		winner = cc.compare(table.getCurrentPlayer(), table.getOtherPlayer());
-		logger.print(table.getOtherPlayer().getName() + ":");
-		logger.print(table.getOtherPlayer().getHand().getTopCard().toString());
-		logger.print("A kör nyertesese: " + winner.getName());
+		Player currentPlayer = table.getCurrentPlayer();
+		Player otherPlayer = table.getOtherPlayer();
 
-		System.out.println("----------------------------------");
-		logger.print(("\n" + table.getCurrentPlayer().getName()));
-		logger.print(table.getCurrentPlayer().getHand().getTopCard().toString());
-		System.out.println((table.getCurrentPlayer().getHand().getTopCard().getLethality()));
-		System.out.println((table.getCurrentPlayer().getHand().getTopCard().getVictims()));
-		System.out.println((table.getCurrentPlayer().getHand().getTopCard().getIncubationTime()));
+		logger.print("Jelenlegi játékos: " + currentPlayer.getName());
+		logger.print(currentPlayer.getHand().getTopCard().toString());
+		winner = cc.compare(currentPlayer, otherPlayer);
+		logger.print(otherPlayer.getName() + ":");
+		logger.print(otherPlayer.getHand().getTopCard().toString());
+		logger.print("A kör nyertesese: " + winner.getName());
 		
-		logger.print("\n" + table.getOtherPlayer().getName());
-		logger.print(table.getOtherPlayer().getHand().getTopCard().toString());
-		System.out.println((table.getOtherPlayer().getHand().getTopCard().getLethality()));
-		System.out.println((table.getOtherPlayer().getHand().getTopCard().getVictims()));
-		System.out.println((table.getOtherPlayer().getHand().getTopCard().getIncubationTime()));
-		
-		System.out.println(table.getCurrentPlayer().getHand().getTopCard().getVictims() > table.getOtherPlayer().getHand().getTopCard().getVictims() );
+		System.out.println(currentPlayer.getName() + ": " + currentPlayer.getHand().getSize());
+		System.out.println(otherPlayer.getName() + ": " + otherPlayer.getHand().getSize());
+
+		if (winner.equals(currentPlayer)) {
+			currentPlayer.getHand().putFirstCardToBack();
+			currentPlayer.getHand().addCard(otherPlayer.getHand().getTopCard());
+			otherPlayer.getHand().removeCard(otherPlayer.getHand().getTopCard());
+		} else {
+			otherPlayer.getHand().putFirstCardToBack();
+			otherPlayer.getHand().addCard(currentPlayer.getHand().getTopCard());
+			currentPlayer.getHand().removeCard(currentPlayer.getHand().getTopCard());
+			table.setCurrentPlayer(otherPlayer);
+		}
+
+		System.out.println(currentPlayer.getName() + ": " + currentPlayer.getHand().getSize());
+		System.out.println(otherPlayer.getName() + ": " + otherPlayer.getHand().getSize());
+
 	}
 
 }
