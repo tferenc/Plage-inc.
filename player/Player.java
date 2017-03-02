@@ -38,12 +38,12 @@ public class Player implements Comparable<Player>{
 		int choosedStatID = -1;
 		
 		Scanner sc = new Scanner(System.in);
-		logger.print("Choose your stat! \n Lethality(1) Victims(2) IncubationTime(3)");
+		logger.print("Válassz tulajdonságot! \n Halálozási arány(1) Áldozatok(2) Lappangási idő(3)");
 		try{
 			choosedStatID = sc.nextInt();
 		}catch(NumberFormatException e){
-			logger.print("Wrong input!");
-			logger.print("Enter the number of your stat!");
+			logger.print("Ilyen lehetőség nincs!");
+			logger.print("Add meg a tulajdonság számát.");
 		}
 		sc.close();
 		
@@ -60,7 +60,7 @@ public class Player implements Comparable<Player>{
 	}
 	
 	public String toString(){
-		return "Name: " + name + "\n, Current card: " + hand.getTopCard().toString();
+		return "Név: " + name + "\n, Aktuális kártya: " + hand.getTopCard().toString();
 	}
 
 	@Override
