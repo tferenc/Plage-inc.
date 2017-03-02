@@ -50,10 +50,13 @@ public class Player implements Comparable<Player>{
 		switch(choosedStatID){
 		case 1:
 			choosedStat = "lethality";
+			break;
 		case 2:
 			choosedStat = "victims";
+			break;
 		case 3:
 			choosedStat = "incubationTime";
+			break;
 		}
 		
 		return choosedStat;

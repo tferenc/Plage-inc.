@@ -7,7 +7,6 @@ import utility.CSVReader;
 
 public class Deck {
 
-	protected int size;
 	protected Collection<DiseaseCard> cards;
 	private CSVReader reader;
 	
