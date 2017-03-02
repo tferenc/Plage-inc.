@@ -34,4 +34,11 @@ public class Hand extends Deck {
 	{	
 		hand.getCards().remove(card);
 	}
+	
+	public void putFirstCardToBack(){
+		DiseaseCard temp = null;
+		temp = getTopCard();
+		removeCard(getTopCard());
+		addCard(temp);
+	}
 }
