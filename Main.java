@@ -20,11 +20,24 @@ public class Main {
 		game.setStartingPlayer(logger);
 		game.printDealer(logger);
 
-		while (players[0].getHand().getSize() != 0 || players[1].getHand().getSize() != 0) {
-			playGame(game, logger, table, cComp);
-		}
-		
-		logger.print("VÉGE");
+		while (players[0].getHand().getSize() != 0 || players[1].getHand().getSize() != 0)
+        {
+            if(players[0].getHand().getSize() == 0)
+            {
+                logger.print("\n" + players[0].getName() + " vesztett! ");
+                break;
+            }
+            else if(players[1].getHand().getSize() == 0)
+            {
+                logger.print("\n" + players[1].getName() + " vesztett!");
+                break;
+            }
+            else
+            {
+                playGame(game, logger, table, cComp);
+            }
+        }
+
 
 	}
 
