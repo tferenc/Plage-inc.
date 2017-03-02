@@ -1,6 +1,4 @@
 package model;
-
-import player.Hand;
 import player.Player;
 
 /**

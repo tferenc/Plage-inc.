@@ -38,14 +38,14 @@ public class Player implements Comparable<Player>{
 		int choosedStatID = -1;
 		
 		Scanner sc = new Scanner(System.in);
-		logger.print("Válassz tulajdonságot! \n Halálozási arány(1) Áldozatok(2) Lappangási idő(3)");
+		logger.print("Válassz tulajdonságot (1-3, 4 - Kilépés):");
 		try{
 			choosedStatID = sc.nextInt();
 		}catch(NumberFormatException e){
 			logger.print("Ilyen lehetőség nincs!");
 			logger.print("Add meg a tulajdonság számát.");
 		}
-		//sc.close();
+		sc.close();
 		
 		switch(choosedStatID){
 		case 1:
@@ -57,6 +57,8 @@ public class Player implements Comparable<Player>{
 		case 3:
 			choosedStat = "incubationTime";
 			break;
+		case 4:
+			System.exit(0);
 		}
 		
 		return choosedStat;
