@@ -45,7 +45,7 @@ public class DiseaseCardGame {
 		r.setSeed(System.currentTimeMillis());
 		int index = r.nextInt(2);
 
-		gameTable.setCurrentPlayer(index);
+		gameTable.setCurrentPlayer(gameTable.getPlayers()[index]);
 		logger.print(gameTable.getCurrentPlayer().getName() + " kezdi az első kört.");
 	}
 

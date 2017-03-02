@@ -60,9 +60,9 @@ public class GameTable extends Table
 
     }
 
-    public void setCurrentPlayer(int index)
+    public void setCurrentPlayer(Player p)
     {
-        currentPlayer = players[index];
+        currentPlayer = p;
     }
 
     @Override
