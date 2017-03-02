@@ -43,7 +43,7 @@ public class Main {
 		Player currentPlayer = table.getCurrentPlayer();
 		Player otherPlayer = table.getOtherPlayer();
 
-		logger.print("Jelenlegi játékos: " + currentPlayer.getName());
+		logger.print("Jelenlegi játékos: " + currentPlayer.getName(), true);
 		logger.print(currentPlayer.getHand().getTopCard().toString());
 		winner = cc.compare(currentPlayer, otherPlayer);
 		logger.print(otherPlayer.getName() + ":");
