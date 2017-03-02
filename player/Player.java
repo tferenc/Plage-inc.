@@ -9,7 +9,8 @@ public class Player implements Comparable<Player>{
 	
 	private Hand hand;
 	private String name;
-	
+	private int choosedStatID = -1;
+
 	public Player(Hand hand, String name) {
 		this.hand = hand;
 		this.name = name;
@@ -35,7 +36,7 @@ public class Player implements Comparable<Player>{
 	public String chooseStat(){
 		Logger logger = new Logger();
 		String choosedStat = null;
-		int choosedStatID = -1;
+
 		
 		Scanner sc = new Scanner(System.in);
 		logger.print("Válassz tulajdonságot (1-3, 4 - Kilépés):");
@@ -106,5 +107,21 @@ public class Player implements Comparable<Player>{
 			}	
 		}
 		return 0;
+	}
+
+	public String getChoosedStat()
+	{
+		switch(choosedStatID)
+		{
+			case 1:
+				return "Halálozás arány";
+			case 2:
+				return   "Áldozatok";
+			case 3:
+				return  "Lappangás";
+			case 4:
+				return "Kilépés";
+		}
+		return "apadfasza";
 	}
 }

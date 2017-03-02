@@ -42,15 +42,18 @@ public class Main {
 		Player currentPlayer = table.getCurrentPlayer();
 		Player otherPlayer = table.getOtherPlayer();
 
-		logger.print("Jelenlegi játékos: " + currentPlayer.getName(), true);
+		logger.print("\nJelenlegi játékos: " + currentPlayer.getName());
 		logger.print(currentPlayer.getHand().getTopCard().toString());
 		winner = cc.compare(currentPlayer, otherPlayer);
+
 		logger.print(otherPlayer.getName() + ":");
 		logger.print(otherPlayer.getHand().getTopCard().toString());
-		logger.print("A kör nyertesese: " + winner.getName());
+		logger.print("A kör nyertesese: " + winner.getName(), true);
 
-		System.out.println(currentPlayer.getName() + ": " + currentPlayer.getHand().getSize());
-		System.out.println(otherPlayer.getName() + ": " + otherPlayer.getHand().getSize());
+        logger.print("A választott szempont: " + currentPlayer.getChoosedStat());
+		logger.print(currentPlayer.getName() + " kártyája : " + currentPlayer.getHand().getTopCard().toString());
+		logger.print(otherPlayer.getName() + " kártyája: " + otherPlayer.getHand().getTopCard().toString());
+
 
 		if (winner.equals(currentPlayer)) {
 			currentPlayer.getHand().putFirstCardToBack();
@@ -62,9 +65,6 @@ public class Main {
 			currentPlayer.getHand().removeCard(currentPlayer.getHand().getTopCard());
 			table.setCurrentPlayer(otherPlayer);
 		}
-
-		System.out.println(currentPlayer.getName() + ": " + currentPlayer.getHand().getSize());
-		System.out.println(otherPlayer.getName() + ": " + otherPlayer.getHand().getSize());
 
 	}
 
