@@ -15,6 +15,7 @@ public class Main {
 		GameTable table = game.getTable();
 		CardComparator cComp = new CardComparator();
 
+        logger.clearScreen();
 		game.initializePlayers(logger);
 		setUpplayerNames(game, logger);
 		game.setStartingPlayer(logger);
