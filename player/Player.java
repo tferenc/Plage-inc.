@@ -38,7 +38,7 @@ public class Player implements Comparable<Player>{
 		int choosedStatID = -1;
 		
 		Scanner sc = new Scanner(System.in);
-		//logger.print("Válassz tulajdonságot! \n Halálozási arány(1) Áldozatok(2) Lappangási idő(3)");
+		logger.print("Válassz tulajdonságot! \n Halálozási arány(1) Áldozatok(2) Lappangási idő(3)");
 		try{
 			choosedStatID = sc.nextInt();
 		}catch(NumberFormatException e){
