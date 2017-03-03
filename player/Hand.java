@@ -3,7 +3,7 @@ package player;
 import game.DiseaseCard;
 import model.Deck;
 
-public class Hand extends Deck {
+public class Hand {
 	private Deck hand;
 
 	public Hand() {
@@ -33,10 +33,9 @@ public class Hand extends Deck {
 	public void removeCard(DiseaseCard card) {
 		hand.getCards().remove(card);
 	}
-
-	@Override
-	public int getSize() {
-		return hand.getSize();
+	
+	public int getSize(){
+		return hand.getCards().size();
 	}
 
 	public void putFirstCardToBack() {
